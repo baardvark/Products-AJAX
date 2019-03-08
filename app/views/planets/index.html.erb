@@ -1,0 +1,23 @@
+<h2 class="center">Planets</h2>
+<hr />
+<div class="row">
+  <div class="col s12 m6">
+    <button class="btn" id="toggle">Show Form</button>
+    <ul id="planets-list">
+      <% @planets.each do |planet| %>
+      <%= render partial: 'planet', locals: { planet: planet } %>
+        <li 
+          class="planet-item" 
+          data-id=<%= planet.id %>
+          data-name="<%= planet.name %>"
+        >
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="col s12 m6" id="moon-list">
+    <h3 id="planet">Planet's Moons</h3>
+    <ul id="moons">
+    </ul>
+  </div>
+</div>
